@@ -120,7 +120,7 @@ $sql = "INSERT INTO `products`( `id`, `users_id`,`name`, `description`,`price`,`
 					"src4" => $imageName3,
 					"src5" => $imageName4
 				];
-                $message = json_encode(array("message" => "Product Created Successfully", "status" => true,"images" => $images));
+                $message = json_encode(array("message" => "Product Created Successfully", "success" => true, "status"=> 201,"images" => $images));
 				echo $message;
         } 
         else {

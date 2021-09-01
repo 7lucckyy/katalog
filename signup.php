@@ -83,10 +83,11 @@ try{
         $sql = "INSERT INTO `users`( `id`,`name`, `email`,`phone`,`password`, `logosrc`) 
 		    VALUES ('$user_id','$name','$email','$phone','$password', '$logosrc')";
         if (mysqli_query($conn, $sql)) {
-                $message = json_encode(array("message" => "User Created Successfully", "status" => true));	
+                $logoImg = [
+                  "src" => $logosrc
+                ]
+                $message = json_encode(array("message" => "User Created Successfully", "success" => true, "status" => 201, "logoImg" => $logosrc));	
                 http_response_code(201);
-                echo $message;
-                echo("Image filename is ".$logosrc);
                 
         } 
         else {
