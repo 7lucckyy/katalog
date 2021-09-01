@@ -53,7 +53,7 @@ if(empty($newfile || $newfile1 || $newfile2 || $newfile3 || $newfile4))
 }
 else
 {
-	// $upload_path = getCwd(); 
+
     $upload_path = "upload/";
 	
 	$fileExt = strtolower(pathinfo($newfile,PATHINFO_EXTENSION));
