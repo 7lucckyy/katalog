@@ -85,10 +85,10 @@ try{
         if (mysqli_query($conn, $sql)) {
                 $logoImg = [
                   "src" => $logosrc
-                ]
+                ];
                 $message = json_encode(array("message" => "User Created Successfully", "success" => true, "status" => 201, "logoImg" => $logosrc));	
                 http_response_code(201);
-                
+                echo $message;
         } 
         else {
         
