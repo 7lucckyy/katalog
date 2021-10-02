@@ -80,11 +80,13 @@ try{
         $password= password_hash($_POST['password'], PASSWORD_DEFAULT);
         $user_id = uniqid();
 
-        $sql = "INSERT INTO `users`( `id`,`name`, `email`,`phone`,`password`, `logosrc`) 
-		    VALUES ('$user_id','$name','$email','$phone','$password', '$logosrc')";
+      $isVerified = false;
+      $sql = "INSERT INTO `users`( `id`, `name`,`email`, `phone`,`password`,`logosrc`, `isVerified`) 
+		    //VALUES ('$users_id','$name', '$email','$phone','$password', '$logosrc', '$isVerified')";
         if (mysqli_query($conn, $sql)) {
-                $logoImg = [
-                  "src" => $logosrc
+          http_response_code(201);
+          $images = [
+            "src1" => $imageName
                 ];
                 $message = json_encode(array("message" => "User Created Successfully", "success" => true, "status" => 201, "logoImg" => $logosrc));	
                 http_response_code(201);
