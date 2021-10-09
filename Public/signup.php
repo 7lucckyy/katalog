@@ -71,8 +71,6 @@ try{
 
         $logosrc = $upload_path . $newfile;
         
-        
-
         $password= password_hash($_POST['password'], PASSWORD_DEFAULT);
         $user_id = uniqid();
 
