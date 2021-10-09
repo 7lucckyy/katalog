@@ -48,8 +48,6 @@ try{
               // check file size '5MB'
               if($fileSize < 5000000){
 
-
-
                 move_uploaded_file($tempPath, $upload_path . $newfile);
               // move file from system temporary path to our upload folder path 
               }
