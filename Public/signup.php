@@ -7,8 +7,6 @@ header("Acess-Control-Allow-Methods: POST");
 header("Acess-Control-Allow-Headers: Acess-Control-Allow-Headers,Content-Type,Acess-Control-Allow-Methods, Authorization");
 
 try{
-  // $json_string = file_get_contents( "php://input");
-  // $data = json_decode($json_string,true);
     $name=$_POST['name'];
     $email=$_POST['email'];
     $phone=$_POST['phone'];
@@ -36,7 +34,7 @@ try{
             $upload_path = "upload/";
           
           $fileExt = strtolower(pathinfo($newfile,PATHINFO_EXTENSION));
-          ; // get image extension
+           // get image extension
             
           // valid image extensions
           $valid_extensions = array('jpeg', 'jpg', 'png', 'gif'); 
