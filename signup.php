@@ -73,8 +73,7 @@ try{
         
         $password= password_hash($_POST['password'], PASSWORD_DEFAULT);
         $user_id = uniqid();
-
-      $isVerified = 1;
+      $isVerified = 0;
       $sql = "INSERT INTO `users`( `id`, `name`,`email`, `phone`,`password`,`logosrc`, `isVerified`) 
 		    //VALUES ('$users_id','$name', '$email','$phone','$password', '$logosrc', '$isVerified')";
         if (mysqli_query($conn, $sql)) {
