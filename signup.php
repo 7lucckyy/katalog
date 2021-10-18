@@ -79,6 +79,17 @@ try{
       $sql = "INSERT INTO `users`( `id`, `name`,`email`, `phone`,`password`,`logosrc`, `isVerified`) 
 		    VALUES ('$user_id','$name', '$email','$phone','$password', '$logosrc', '$isVerified')";
         if (mysqli_query($conn, $sql)) {
+          $to = $email;
+          $subject = "Email Verification from Katalok";
+          $message = "Verication Mail";
+          $headers = "MIME-Version: 1.0" . "\r\n";
+          $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+          // More headers
+          $headers .= 'From: <bannamamamohammed7@gmail.com>' . "\r\n";
+          $headers .= 'Cc: myboss@example.com' . "\r\n";
+
+          mail($to,$subject,$message,$headers);
           http_response_code(201);
           $images = [
             "src1" => $imageName
