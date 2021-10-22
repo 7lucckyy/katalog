@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "1131211";
 $dbname = "katalog";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
